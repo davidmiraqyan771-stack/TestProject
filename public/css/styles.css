@@ -1,0 +1,168 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px 20px;
+}
+
+#rooms {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 25px;
+  margin: 10px 0;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+}
+
+.room-description {
+  font-size: 1.05rem;
+  color: #e0e0e0;
+  line-height: 1.6;
+  margin: 15px 0;
+  font-style: italic;
+  flex-grow: 1; 
+}
+
+.theme-section {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.theme-label {
+  display: inline-block;
+  color: #00c6ff;
+  font-weight: bold;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.theme-description {
+  font-size: 0.9rem;
+  color: #aaa;
+  line-height: 1.4;
+  margin: 0;
+}
+
+input, select, textarea, button {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  margin: 8px 0 15px 0;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+option {
+  background: #203a43;
+  color: white;
+}
+
+button {
+  background: #00c6ff;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #0072ff;
+  color: white;
+}
+
+details {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Updated Summary to align badges nicely */
+summary {
+  padding: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1em;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px; 
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: '▼';
+  font-size: 0.8em;
+  transition: transform 0.3s;
+  margin-left: auto; /* Pushes the arrow to the far right */
+}
+
+details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.details-content {
+  padding: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.badge {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 0px;
+}
+.badge.easy { background: #2ecc71; color: #000; }
+.badge.medium { background: #f1c40f; color: #000; }
+.badge.hard { background: #e67e22; color: #000; }
+.badge.expert { background: #e74c3c; color: #fff; }

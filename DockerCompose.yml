@@ -1,0 +1,21 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: mongodb
+    ports:
+      - "27223:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  app:
+    build: .
+    ports:
+      - "3001:3001"
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/questrooms
+      - PORT=3001
+
+volumes:
+  mongo_data:

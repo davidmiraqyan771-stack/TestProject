@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Admin Panel</h1>
+
+    <div id="editThemeSection" class="card" style="display:none; border-left: 4px solid #fbc531;">
+      <h2>Edit Theme</h2>
+      <input type="hidden" id="editThemeId">
+      <input id="editThemeName" placeholder="Theme name" />
+      <textarea id="editThemeDesc" placeholder="Description"></textarea>
+      <button onclick="submitEditTheme()">Save Theme</button>
+      <button onclick="cancelEdit('editThemeSection')" style="background: #ff4b2b; color: white;">Cancel</button>
+    </div>
+
+    <div id="editRoomSection" class="card" style="display:none; border-left: 4px solid #fbc531;">
+      <h2>Edit Room</h2>
+      <input type="hidden" id="editRoomId">
+      <input id="editRoomName" placeholder="Room name" />
+      <textarea id="editRoomDesc" placeholder="Room Story/Description"></textarea>
+      <select id="editRoomDifficulty">
+        <option value="Easy">Easy</option>
+        <option value="Medium">Medium</option>
+        <option value="Hard">Hard</option>
+        <option value="Expert">Expert</option>
+      </select>
+      <select id="editRoomThemeSelect"></select>
+      <button onclick="submitEditRoom()">Save Room</button>
+      <button onclick="cancelEdit('editRoomSection')" style="background: #ff4b2b; color: white;">Cancel</button>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+      <div class="card" style="margin: 0;">
+        <h2>Create Theme</h2>
+        <input id="themeName" placeholder="Theme name" />
+        <textarea id="themeDesc" placeholder="Theme Description"></textarea>
+        <button id="createThemeBtn">Create Theme</button>
+      </div>
+
+      <div class="card" style="margin: 0;">
+        <h2>Create Room</h2>
+        <input id="roomName" placeholder="Room name" />
+        <textarea id="roomDesc" placeholder="Room Story/Description"></textarea>
+        <select id="difficulty">
+          <option value="Easy">Easy</option>
+          <option value="Medium">Medium</option>
+          <option value="Hard">Hard</option>
+          <option value="Expert">Expert</option>
+        </select>
+        <select id="themeSelect"></select>
+        <button onclick="createRoom()">Create Room</button>
+      </div>
+    </div>
+
+    <hr style="margin: 40px 0; border-color: rgba(255,255,255,0.2);">
+
+    <h2>Existing Themes</h2>
+    <div id="adminThemes"></div>
+
+    <h2 style="margin-top: 30px;">Existing Rooms</h2>
+    <div id="adminRooms"></div>
+  </div>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
