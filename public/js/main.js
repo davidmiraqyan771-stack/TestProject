@@ -4,7 +4,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 
   const h1 = document.getElementById("h1Text");
 
-  h1.innerText = `Epic Quest Rooms  ${process.env.SSH_CONNECTION}`
+  h1.innerText = `Epic Quest Rooms  ${process.env.ip}`
 
   // === 1. LOGIC FOR INDEX.HTML (USERS PAGE) ===
   const roomsContainer = document.getElementById('rooms');
