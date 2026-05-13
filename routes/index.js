@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
     const modifiedData = data.replace('</body>', `  <div style="text-align: center; color: white;">IP: ${ipStr}</div>\n</body>`);
     res.send(modifiedData);
   });
-g});
+});
 
 router.get('/api/rooms', async (req, res) => {
   const rooms = await Room.find().populate('themeId');
