@@ -1,19 +1,7 @@
 window.addEventListener("DOMContentLoaded", async () => {
   console.log("JS LOADED");
 
-  const h1 = document.getElementById("h1Text");
-  async function getIP() {
-    try {
-      const response = await fetch("https://api.ipify.org?format=json");
-      const data = await response.json();
-      console.log("Your public IP address is: ", data.ip);
-      return data.ip;
-    } catch (error) {
-      console.error("Error fetching IP:", error);
-    }
-  }
 
-  h1.innerText = `Epic Quest Rooms  ${await getIP()}`;
 
   // === 1. LOGIC FOR INDEX.HTML (USERS PAGE) ===
   const roomsContainer = document.getElementById("rooms");
